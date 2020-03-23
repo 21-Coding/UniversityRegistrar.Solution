@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+@model UniversityRegistrar.Models.Student
+
+<h4>Edit Student Details for @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.ClientId)
+  @Html.Label("Student Name: ")
+  @Html.TextBoxFor(model => model.Name)
+  @Html.Label("Date of Enrollment: ")
+  @Html.TextBoxFor(model => model.DateOfEnrollment)
+
+  <input type="submit" value="Edit Student" class="btn btn-default">
+}

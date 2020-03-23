@@ -1,0 +1,21 @@
+@{
+    Layout = "_Layout";
+}
+
+@using UniversityRegistrar.Models;
+@model UniversityRegistrar.Models.Course;
+
+<h3>Course Details</h3>
+<hr>
+<h3>@Html.DisplayNameFor(ModelExpressionProvider => model.UnfinishedClassNameHere): @Html.DisplayFor(ModelExpressionProvider => model.UnfinishedClassNameHere)</h3>
+
+@if(@Model.UnfinishedClassNameHere.Count == 0)
+{
+    <p>This course doees not belong to any students. </p>
+}
+@foreach (Student student in @Model.Students)
+{
+    <li>Name: @student.Name</li>
+}
+</ul>
+
