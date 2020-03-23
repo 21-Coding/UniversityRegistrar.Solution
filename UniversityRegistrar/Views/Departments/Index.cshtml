@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@using UniversityRegistrar.Models;
+@model List<UniversityRegistrar.Models.Department>;
+
+<h1>Departments</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3> Please add a department to the list </h3>
+}
+
+@foreach (Department department in Model)
+{
+  <p>@Html.ActionLink($"{department.DepartmentName}", "Details", new {id=department.DepartmentId})</p>
+}
+<p>@Html.ActionLink("Add a new department", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

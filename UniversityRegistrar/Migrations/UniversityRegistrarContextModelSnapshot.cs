@@ -30,12 +30,26 @@ namespace UniversityRegistrar.Migrations
                     b.ToTable("Courses");
                 });
 
+            modelBuilder.Entity("UniversityRegistrar.Models.Department", b =>
+                {
+                    b.Property<int>("DepartmentId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("DepartmentName");
+
+                    b.HasKey("DepartmentId");
+
+                    b.ToTable("Departments");
+                });
+
             modelBuilder.Entity("UniversityRegistrar.Models.Enrollment", b =>
                 {
                     b.Property<int>("EnrollmentId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("CourseId");
+
+                    b.Property<int>("DepartmentId");
 
                     b.Property<int>("StudentId");
 

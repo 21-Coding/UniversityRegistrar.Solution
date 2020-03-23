@@ -22,6 +22,19 @@ namespace UniversityRegistrar.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Departments",
+                columns: table => new
+                {
+                    DepartmentId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    DepartmentName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Departments", x => x.DepartmentId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Students",
                 columns: table => new
                 {
@@ -42,7 +55,8 @@ namespace UniversityRegistrar.Migrations
                     EnrollmentId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     StudentId = table.Column<int>(nullable: false),
-                    CourseId = table.Column<int>(nullable: false)
+                    CourseId = table.Column<int>(nullable: false),
+                    DepartmentId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -74,6 +88,9 @@ namespace UniversityRegistrar.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Departments");
+
             migrationBuilder.DropTable(
                 name: "Enrollment");
 

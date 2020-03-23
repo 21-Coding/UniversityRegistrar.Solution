@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+@* @model UniversityRegistrar.Models.Department
+
+<h2>Are you sure you want to remove this department?</h2>
+
+@Html.DisplayFor(model => model.Name)
+@using(Html.BeginForm())
+{
+  <input type="submit" value="Destroy">
+} *@
