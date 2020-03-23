@@ -18,7 +18,7 @@ namespace UniversityRegistrar.Controllers
 
     public ActionResult Index()
     {
-      return View(_db.Items.ToList());
+      return View(_db.Students.ToList());
     }
 
     public ActionResult Create()

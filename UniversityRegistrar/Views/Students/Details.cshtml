@@ -16,7 +16,7 @@ else
 {
   <h5>Current Courses:</h5>
   
-  @foreach(Enrollment join in Model.Courses)
+  @foreach(var join in Model.Courses)
   {
     <p>@join.Course.Name</p>
     @using (Html.BeginForm("DeleteCourse", "Students"))
