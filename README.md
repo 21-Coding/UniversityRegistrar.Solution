@@ -122,3 +122,6 @@ This tool is provided as is.
 *This webpage is licensed under the MIT license.*
 
 Copyright (c) 2020 **_Patrick Kille, Matt Taylor, Drake Wilcox, Dominique Youmans_**
+
+
+46074403+21-Coding@users.noreply.github.com

@@ -13,6 +13,6 @@ namespace UniversityRegistrar.Models
     public string Name {get;set;}
     public string CourseNumber {get;set;}
 
-    public ICollection<Enrollment> Enrollments {get;set;}
+    public ICollection<Enrollment> Students {get;set;}
   }
 }
